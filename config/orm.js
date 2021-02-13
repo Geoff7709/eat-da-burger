@@ -2,12 +2,13 @@ const connection = require('./connection');
 
 
 const orm = {
-    selectall: function(){
-        const queryString = `SELECT * FROM burgers`;
+    selectAll: function(cb){
+        const queryString = "SELECT * FROM burgers"
         connection.query(queryString, (err, data) => {
             if (err) throw err;
             console.log(data);
-        })
+            cb(data);
+        });
     },
     insertOne: function() {
         console.log('insertOne')

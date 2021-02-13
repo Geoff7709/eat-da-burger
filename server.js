@@ -1,11 +1,20 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`)
+const exphbs = require('express-handlebars')
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }))
+app.set("view engine", "handlebars")
+
+const router = require('./controllers/burgers_controller')
+
+app.use(router)
+
+app.listen(PORT, () => {
+  console.log(`Listening at http://localhost:${PORT}`)
 })
