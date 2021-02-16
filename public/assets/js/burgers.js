@@ -2,7 +2,7 @@ $(document).ready(() => {
     const form = $('form')
     const textarea = $('textarea')
     const devour = $('.devour')
-    form.on('submit', function(e) {
+    form.on('submit', function (e) {
         e.preventDefault()
         makeBurger()
     })
@@ -12,30 +12,28 @@ $(document).ready(() => {
             url: '/',
             method: 'POST',
             data: {
-              burger_name: textarea.val()
+                burger_name: textarea.val()
             }
-          })  
-          .then(response => {
-              console.log(response + "response")
-             window.location = '/'
-          })
-          .catch(err => console.log(err))
-    }
-    devour.on('click', function() {
-        const id = $(this).attr('data-id')
-        function eatBurger() {
-            console.log(id)
-            $.ajax({
-                url: '/' + id,
-                method: 'PUT',
+        })
+            .then(response => {
+                console.log(response + "response")
+                window.location = '/'
             })
-                .then(response => {
-                    console.log(response + "response")
-                    window.location = '/'
-                })
-                .catch(err => console.log(err))
-        }
-        eatBurger()
+            .catch(err => console.log(err))
+    }
+    devour.on('click', function () {
+        console.log($('.devour').attr('data-id'))
+        const id = $(this).attr('data-id')
+        console.log(id)
+        $.ajax({
+            url: '/' + id,
+            method: 'PUT',
+        })
+            .then(response => {
+                console.log("response: " + response)
+                window.location = '/'
+            })
+            .catch(err => console.log(err))
     })
 })
 
