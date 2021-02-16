@@ -5,7 +5,13 @@
 <ul>
     {{#each burgers}}
     <li>
-        {{this.burger_name}}
+        <span>{{burger_name}}</span>
+        <button class="devour" data-id="{{id}}">DEVOUR</button>
     </li>
     {{/each}}
 </ul>
+<form>
+  <textarea name="burger_name"></textarea>
+  <button type="submit">Add Burger</button>
+</form>
+

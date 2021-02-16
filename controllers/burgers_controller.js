@@ -9,9 +9,17 @@ router.get('/', function(req, res) {
         let hbsObject = {
             burgers: data
         }
-        console.log(hbsObject);
         res.render("index", hbsObject);
     });
+})
+
+router.post('/', function(req, res) {
+    console.log(req.body)
+    burger.make(req.body.burger_name, function(data) {
+
+        res.redirect('/')
+
+    })
 })
 
 module.exports = router;
