@@ -12,6 +12,12 @@ const burger = {
         orm.insertOne("burger_name", newBurger, function(res) {
             cb(res)
         })
+    },
+
+    eat: function(id, cb) {
+        orm.updateOne(id, function(res) {
+            cb(res)
+        })
     }
 }
 

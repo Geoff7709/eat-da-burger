@@ -22,4 +22,11 @@ router.post('/', function(req, res) {
     })
 })
 
+router.put('/:id', (req, res) => {
+    burger.eat(req.params.id, function(data) {
+        console.log("post:" + data)
+        res.redirect('/')
+    })
+})
+
 module.exports = router;

@@ -11,7 +11,7 @@ const orm = {
         });
     },
     insertOne: function(colName, newBurger, cb) {
-        console.log(colName, newBurger + " ormData2")
+        console.log("ormData2: " + colName, newBurger)
         const queryString = "INSERT INTO burgers (" + colName + ") VALUES " + "('" + newBurger + "');" 
         connection.query(queryString, (err, data) => {
             if (err) throw err
@@ -19,8 +19,13 @@ const orm = {
             cb(data)
         })
     },
-    updateOne: function() {
-        console.log('updateOne')
+    updateOne: function(id, cb) {
+        const queryString = "UPDATE burgers SET devoured = 1 WHERE id = " + id +";"
+        connection.query(queryString, (err, data) => {
+            if (err) throw err
+            console.log(data)
+            cb(data)
+        })
     }
 }
 module.exports = orm;

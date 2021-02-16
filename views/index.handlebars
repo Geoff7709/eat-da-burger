@@ -1,17 +1,41 @@
-<h1>Eat Da Burger!!</h1>
-<h2>Burgers</h2>
-
-
-<ul>
-    {{#each burgers}}
-    <li>
-        <span>{{burger_name}}</span>
-        <button class="devour" data-id="{{id}}">DEVOUR</button>
-    </li>
-    {{/each}}
-</ul>
-<form>
-  <textarea name="burger_name"></textarea>
-  <button type="submit">Add Burger</button>
-</form>
-
+<header class="text-center">
+  <h1>Eat Da Burger!!</h1>
+</header>
+<div class="text-center">
+  <img src="/image/burger.png" class="img-fluid" alt="burger">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>New Burgers</h2>
+      <ol>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+          <span>{{burger_name}}</span>
+          <button class="devour" data-id="{{id}}">DEVOUR</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ol>
+    </div>
+    <div class="col-md-4">
+      <form>
+        <textarea name="burger_name"></textarea>
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h2>Eaten Burgers</h2>
+      <ol>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          <span data-id="{{id}}">{{burger_name}}</span>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+</div>
