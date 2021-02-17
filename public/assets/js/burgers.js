@@ -7,16 +7,21 @@ $(document).ready(() => {
         makeBurger()
     })
     function makeBurger() {
-        console.log(textarea.val())
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        const burgerEntry = (textarea.val()).split(' ').map(capitalize).join(' ')
+        console.log(burgerEntry)
         $.ajax({
             url: '/',
             method: 'POST',
             data: {
-                burger_name: textarea.val()
+                burger_name: burgerEntry
             }
         })
             .then(response => {
-                console.log(response + "response")
+                console.log('makeBurger reponse ')
+                console.log(response)
                 window.location = '/'
             })
             .catch(err => console.log(err))
@@ -30,10 +35,11 @@ $(document).ready(() => {
             method: 'PUT',
         })
             .then(response => {
-                console.log("response: " + response)
-                window.location = '/'
+                console.log("devourResponse: " + response)
+               location.reload()
             })
             .catch(err => console.log(err))
     })
+    console.log('documentReady finished')
 })
 

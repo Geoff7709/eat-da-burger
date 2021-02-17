@@ -7,18 +7,7 @@
 <div class="container hero align-items-center">
   <div class="row">
     <div class="col-md-4 align-self-center">
-      {{!-- <h2>New Burgers</h2>
-      <ol>
-        {{#each burgers}}
-        {{#unless devoured}}
-        <li>
-          <span>{{burger_name}}</span>
-          <button class="devour" data-id="{{id}}">DEVOUR</button>
-        </li>
-        {{/unless}}
-        {{/each}}
-      </ol> --}}
-      <div class="card border border-4 border-light rounded shadow" style="width: 18rem;">
+      <div class="card border border-4 border-dark rounded shadow" style="width: 18rem;">
         <img src="/image/eatMe.png" class="card-img-top" alt="burger">
         <div class="card-body">
           <h3 class="card-title">New Burgers</h3>
@@ -38,22 +27,12 @@
     </div>
     <div class="col-md-4 align-self-center">
       <form class="stretchColumn">
-        <textarea name="burger_name" class="rounded border border-2"></textarea>
+        <textarea name="burger_name" class="rounded border border-2 border-dark"></textarea>
         <button class="btn btn-success rounded-pill" type="submit">Add A Burger</button>
       </form>
     </div>
     <div class="col-md-4 align-self-center">
-      {{!-- <h2>Eaten Burgers</h2>
-      <ol>
-        {{#each burgers}}
-        {{#if devoured}}
-        <li>
-          <span data-id="{{id}}">{{burger_name}}</span>
-        </li>
-        {{/if}}
-        {{/each}}
-      </ol> --}}
-      <div class="card border border-4 border-light rounded shadow" style="width: 18rem;">
+      <div class="card border border-4 border-dark rounded shadow" style="width: 18rem;">
         <img src="/image/eatenBurger.jpg" class="card-img-top" alt="burger">
         <div class="card-body">
           <h3 class="card-title">Devoured Burgers</h3>
@@ -64,6 +43,7 @@
           {{#if devoured}}
           <li class="list-group-item">
             <span>{{burger_name}}</span>
+            {{!-- <button class="delete btn btn-danger rounded-pill" data-id="{{id}}">DELETE</button> --}}
           </li>
           {{/if}}
           {{/each}}

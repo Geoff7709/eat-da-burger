@@ -5,6 +5,7 @@ const router = express.Router();
 const burger = require('../models/burger');
 
 router.get('/', function(req, res) {
+    console.log('router get')
     burger.all(function(data) {
         let hbsObject = {
             burgers: data
@@ -25,7 +26,7 @@ router.post('/', function(req, res) {
 router.put('/:id', (req, res) => {
     burger.eat(req.params.id, function(data) {
         console.log("post:" + data)
-        res.redirect('/')
+        res.sendStatus(200)
     })
 })
 

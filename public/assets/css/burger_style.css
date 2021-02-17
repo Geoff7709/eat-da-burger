@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(40deg, black, #f86808);
     font-family: cursive;
+    color: rgb(151, 38, 10)
 }
 header {
     background-image: linear-gradient(40deg, rgb(11, 32, 2), #078107);
