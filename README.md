@@ -14,7 +14,7 @@
 
   [Questions](#questions)
 
-  [Lisence](#lisence)
+  [License](#license)
 
   ## Description
   This is a simple and fun application where the user can log types of burgers and keep track of whether the have beeneaten. It is a demonstration of a full-stack application using MySQL, Express, Handlebars, and the JAWSDB from Heroku.
@@ -37,7 +37,7 @@
   For further questions please feel free to email the developers:
 
   geoffzimmerman23@gmail.com
-  ## Lisence
+  ## License
   Use of this software is regulated under the following lisence:
 
   [MIT](https://opensource.org/licenses/MIT)
